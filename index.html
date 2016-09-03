@@ -16,8 +16,13 @@
   <body>
 
 	<script>
-		function showDetails(){
-			alert("hi");
+		function toggleDetails(divId){
+
+			var ele = document.getElementById(divId);
+			if(ele.style.display == "block")
+				ele.style.display = "none";
+			else
+				ele.style.display = "block";
 		}
 	</script>
 
@@ -39,6 +44,24 @@
 		<p>
 		My name is Abhishek Kumar. I am a masters student at North Carolina State University. 
 
+		<br/><br/>
+		<b> Projects list: </b>
+		<ul> 
+			<li><a href ="#" onClick="toggleDetails('slack_timed_div');">Slack Timed Message</a> 
+				<div id= "slack_timed_div" style="display:none;">
+				
+					<br/>Suppose you want to message your boss who is in a meeting and you don't want to disturb him. You know the meeting will end in next 30 mins, but you will AFK(away from keyboard) then. Enters Slack Timed Message! With this custom feature, the recepient will recieve your message at the time specified.<br/>
+<a href="#">Show project on Github</a>
+					
+				</div> 
+			</li>
+			<li><a href ="https://github.com/akumar21NCSU/SlackTimer" onClick="toggleDetails('slack_timed_div');">Slack Status Notifier</a>
+			
+			</li>
+			<li>Slack Thesaurus bot</li>
+			<li>Mozilla Servo</li>
+			<li></li>
+		</ul>
 		<br/>
 		<b>Blog topics:</b>
 		<ul>
@@ -46,16 +69,7 @@
 			<li>Algorithms & Data Structure</li>
 			<li>Hacking</li>
 		</ul>
-
-		<b> Projects: </b>
-		<ul> 
-			<li><a href ="#" onClick="showDetails();">Slack Timed Message</a></li>
-			<li>Slack Status Notifier</li>
-			<li>Slack Thesaurus bot</li>
-			<li>Mozilla Servo</li>
-			<li></li>
-		</ul>
-
+		
 		</p>
 
       </section>
