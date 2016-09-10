@@ -87,7 +87,7 @@ class BillingService {
 }
 </pre>
 
-Here @Inject is how you tell Guice that you want to inject this constructor. Now, it seemed intuitve that in Scala @Inject should work.
+Here @Inject is how you tell Guice that you want to inject this constructor. Now, it seemes intuitve that in Scala @Inject should work.
 But notice a valid Scala code below. The brackets after @Inject is a must in Scala.
 <pre>
 	class BillingService @Inject()( processor: CreditCardProcessor, transactionLog: TransactionLog)

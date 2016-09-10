@@ -14,6 +14,18 @@
   </head>
 
   <body>
+	<script>
+	
+		function fillBlogDiv(divId){
+	
+			var blogDiv = document.getElementById("blogDiv");
+			var curDiv = document.getElementById(divId);
+		
+			blogDiv.innerHTML = curDiv.innerHTML;
+
+		}
+
+	</script>
 	<header>
       <div class="container">
         <h1>Akumar21ncsu.GitHub.io</h1>
@@ -31,6 +43,21 @@
 			<h4>About: </h4><p>
 			Hacking 101
 		</p>
+
+		<ul>
+			<li>
+				<a href="#" onClick="fillBlogDiv('scala_guice_div');return false;">Google Guice integration with Scala</a>
+			</li>
+			<li>
+				<a href="#" onClick="fillBlogDiv('scala_beginner_div');return false;">Quick Introduction to Scala</a>
+			</li>
+	
+		</ul>
+<br/>
+<div id="blogDiv">
+
+</div>
+
 		
 	  </section>
 	</div>

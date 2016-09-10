@@ -14,6 +14,18 @@
   </head>
 
   <body>
+	<script>
+	
+		function fillBlogDiv(divId){
+	
+			var blogDiv = document.getElementById("blogDiv");
+			var curDiv = document.getElementById(divId);
+		
+			blogDiv.innerHTML = curDiv.innerHTML;
+
+		}
+
+	</script>
 	<header>
       <div class="container">
         <h1>Akumar21ncsu.GitHub.io</h1>
@@ -32,20 +44,34 @@
 			This blog contains some of the interesting algorithms and advanced data structures that I have worked on.
 			
 		</p>
-		<h3>
-			'Compressd Trie' Data Structure:</h3>
+
+		<ul>
+			<li>
+				<a href="#" onClick="fillBlogDiv('algo_compTrie_div');return false;">'Compressd Trie' Data Structure</a>
+			</li>
+			<li>
+				<a href="#" onClick="fillBlogDiv('algo_minHeap_div');return false;">'MaxHeap' Data Structure</a>
+			</li>
+	
+		</ul>
+<br/>
+<div id="blogDiv">
+
+</div>
+
+
+		<div id="algo_compTrie_div" style="display:none">
+			This is my implementation for the compressed Trie data structure. This video is really good to understand Trie data structure. 
+			<br/>
 			<a href="https://github.com/akumar21NCSU/advanced-algo-ds/blob/master/CompTrie.java" target="_blank" >View Code on GitHub.</a>
 
 			<br/>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/RR9_HmbLdpE" frameborder="0" allowfullscreen></iframe>
-
-			<br/>
-			<br/>
-		
+		</div>
 			
-			<h3>
-			'MaxHeap' Data Structure:</h3>
-			 The following video is a good introduction to MaxHeap. Also, check out <a href="http://quiz.geeksforgeeks.org/binary-heap/" >this</a>  for Min Heap.
+			
+			<div id="algo_minHeap_div" style="display:none">
+			 The following video is a good introduction to MaxHeap. Also, check <a href="http://quiz.geeksforgeeks.org/binary-heap/" >this</a>  out for Min Heap.
 			<a href="https://github.com/akumar21NCSU/advanced-algo-ds/blob/master/MaxHeap.java" target="_blank" >View Code on GitHub.</a>
 
 			<br/>
@@ -53,7 +79,7 @@
 			<br/>
 			
 
-		
+			</div>
 		
 	  </section>
 	</div>
