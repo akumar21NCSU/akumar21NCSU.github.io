@@ -58,7 +58,51 @@
 
 <div id="hack_bf_div" style="display:none">
 	
+	For those new to buffer overflow. I recommend reading <a href= "http://phrack.org/issues/49/14.html#article">this</a>.
+	<br/>
+	The article is great for learning the concept of buffer overflow but the code in it is for a very old system.(Article was published in 90's). This code will not work for today's operating systems. There are a lot of security features added to OS now, for eg. ASLR (Address Space Layout Randomization). In order to try buffer overflow we would have to explicitly turn off these mechanisms.<br/>
+Below I am listing steps to do a simple buffer overlow on a Linux system(Ubuntu 14.04). <br/>
+Here in the main function, after the call to function is made the assignment variable x =1; will never get executed. As we are overflowing the buffer and changing the return address stored on stack.
+
+<pre>
+#include<stdio.h>
+
+void flow(int a, int b, int c) {
+   char buffer1[5];
+   char buffer2[10];
+   void *ret = &buffer1;
+	int* raddr;
+
+	//printf("Return address: %p\n", __builtin_return_address(0));
+	//printf("Frame Address: %p\n", __builtin_frame_address(0));
+	//printf("Caller Frame Address: %p\n", __builtin_frame_address(1));
+   	ret = (char*)ret + 17;
 	
+	//printf("buffer1 + 17 bytes -  %p\n",ret);
+
+	raddr =(int*)((char*)ret + 8);
+
+	printf("Return addr: Fp + 8 bytes -  %p\n",*raddr);
+
+	*raddr = *raddr + 16;
+	printf("New content of ret -%p\n",*raddr);
+
+   //(*ret) += 15;
+	//printf("value at new place %d\n",*ret);
+}
+
+void main() {
+  int x;
+
+  x = 0;
+  flow(1,2,3);
+  x = 1;
+  printf("%d\n",x);
+}
+</pre>
+
+
+
 
 </div>
 		
