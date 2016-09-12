@@ -60,7 +60,7 @@
 	
 	For those new to buffer overflow. I recommend reading <a href= "http://phrack.org/issues/49/14.html#article">this</a>.
 	<br/>
-	The article is great for learning the concept of buffer overflow but the code in it is for a very old system.(Article was published in 90's). This code will not work for today's operating systems. There are a lot of security features added to OS now, for eg. ASLR (Address Space Layout Randomization). In order to try buffer overflow we would have to explicitly turn off these mechanisms.<br/>
+	The article is great for learning the concept of buffer overflow but the code in it is for a very old system.(Article was published in 90's). This code will not work for today's operating systems. There are a lot of security features added to OS now, for eg. ASLR (Address Space Layout Randomization). In order to try buffer overflow we would have to explicitly turn off these mechanisms. We do that by using '-fno-stack-protector' flag while compiling our program.<br/>
 Below I am listing steps to do a simple buffer overlow on a Linux system(Ubuntu 14.04). <br/>
 Here in the main function, after the call to function is made the assignment variable x =1; will never get executed. As we are overflowing the buffer and changing the return address stored on stack.
 
